@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/activity_main.xml" value="0.10400000000000001" />
         <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/content_main.xml" value="0.12847838957963292" />
+        <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/fragment_list.xml" value="0.264" />
+        <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/fragment_new_list.xml" value="0.2" />
+        <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/fragment_store.xml" value="0.264" />
+        <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/lists_row.xml" value="0.264" />
         <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/menu/menu_main.xml" value="0.8854368932038835" />
       </map>
     </option>

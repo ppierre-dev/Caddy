@@ -1,4 +1,12 @@
 <resources>
+    <!--App-->
     <string name="app_name">Caddy</string>
-    <string name="action_settings">Paramètres</string>
+    <!--List-->
+    <string name="list_fragment_name">Mes Listes</string>
+    <!--New List-->
+    <string name="newList_fragment_name">Nouvelle Liste</string>
+    <string name="newList_input_name">Nom</string>
+
+    <!--Store-->
+    <string name="store_fragment_name">Magasin</string>
 </resources>
