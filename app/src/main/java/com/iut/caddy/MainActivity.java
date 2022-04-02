@@ -29,11 +29,10 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        lists = (ListView) findViewById(R.id.listView);
+        this.dbAdapter = new DbAdapter(this);
+        this.dbAdapter.open();
 
-        dbAdapter = new DbAdapter(this);
-        dbAdapter.open();
-        loadLists();
+        System.out.println(this.dbAdapter);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -46,18 +45,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-
-    private void loadLists() {
-        // Get all of the notes from the database and create the item list
-        Cursor c = dbAdapter.fetchAllLists();
-        startManagingCursor(c);
-
-        String[] from = new String[] { dbAdapter.KEY_NAME};
-        int[] to = new int[] { R.id.listsText};
-
-        // Now create an array adapter and set it to display using our row
-        SimpleCursorAdapter listRes =
-                new SimpleCursorAdapter(this, R.layout.lists_row, c, from, to,0);
-        lists.setAdapter(listRes);
+    public DbAdapter getDbAdapter() {
+        return this.dbAdapter;
     }
 }

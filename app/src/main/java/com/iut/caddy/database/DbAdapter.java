@@ -62,6 +62,14 @@ public class DbAdapter {
             db.execSQL("create table productList (productId integer, listId integer, foreign key (productId) references products(_id), foreign key (listId) references lists(_id))");
             db.execSQL("insert into lists(name) values (\"Liste 1\");");
             db.execSQL("insert into lists(name) values (\"Liste 2\");");
+            db.execSQL("insert into products(label) values ('Bananes')");
+            db.execSQL("insert into products(label) values ('Fraises')");
+            db.execSQL("insert into products(label) values ('Melons')");
+            db.execSQL("insert into products(label) values ('Salades')");
+            db.execSQL("insert into productList(productId, listId) values (1,1)");
+            db.execSQL("insert into productList(productId, listId) values (2,1)");
+            db.execSQL("insert into productList(productId, listId) values (3,1)");
+            db.execSQL("insert into productList(productId, listId) values (4,2)");
         }
 
         @Override
@@ -104,5 +112,25 @@ public class DbAdapter {
 
     public Cursor fetchAllLists() {
         return mDb.query("lists", new String[] {"_id", "name"}, null, null, null, null, null);
+    }
+
+    public void newList(String _name) {
+        mDb.execSQL("insert into lists (name) values ('"+_name+"');");
+    }
+
+    public Cursor findProductsByListId(int listId) {
+        return mDb.rawQuery("select _id, label from products as p inner join productList as pl on pl.productId = p._id where pl.listId = ?;", new String[]{String.valueOf(listId)});
+    }
+
+    public Cursor fetchAllProducts() {
+        return mDb.query("products", new String[] {"_id", "label"}, null, null, null, null, null);
+    }
+
+    public void addItemToList(int productId, int listId) {
+        mDb.execSQL("insert into productList(productId, listId) values ('"+productId+"', '"+listId+"')");
+    }
+
+    public Cursor getListIdFromName(String listName) {
+        return mDb.rawQuery("select _id from lists where name like ?", new String[]{String.valueOf(listName)});
     }
 }

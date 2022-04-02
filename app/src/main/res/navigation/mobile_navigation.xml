@@ -23,4 +23,9 @@
         android:label="@string/store_fragment_name"
         tools:layout="@layout/fragment_store" />
 
+    <fragment
+        android:id="@+id/navigation_view_products_list"
+        android:name="com.iut.caddy.ui.viewProductsList.ViewProductsList"
+        tools:layout="@layout/view_products_list_fragment" />
+
 </navigation>

@@ -7,14 +7,26 @@
     tools:context=".ui.newList.NewListFragment">
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/inputNewListName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/newList_input_name"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="89dp" />
+        tools:layout_editor_absoluteY="40dp" />
+
+    <Button
+        android:id="@+id/addNewListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/newList_add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNewListName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
