@@ -22,8 +22,30 @@
         android:id="@+id/store_productsListView"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/store_title" />
+
+    <Button
+        android:id="@+id/addProducts"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="44dp"
+        android:text="Ajouter "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintStart_toEndOf="@+id/txtAddProducts"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtAddProducts"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="75dp"
+        android:text="Ajouter un produit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

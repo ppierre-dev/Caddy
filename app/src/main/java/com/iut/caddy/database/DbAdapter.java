@@ -140,6 +140,13 @@ public class DbAdapter {
     }
 
     public void clearProductsList(int listId){
-        mDb.execSQL("delete from " + "productsList where listId = " + listId);
+        mDb.execSQL("delete from productsList where listId = " + listId);
+    }
+
+    public long addProducts(String body) {
+        ContentValues initialValues = new ContentValues();
+        initialValues.put("label", body);
+
+        return mDb.insert("products", null, initialValues);
     }
 }

@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -25,11 +27,13 @@ import com.iut.caddy.R;
 import com.iut.caddy.database.DbAdapter;
 import com.iut.caddy.databinding.FragmentStoreBinding;
 
+
 public class StoreFragment extends Fragment {
 
     private FragmentStoreBinding binding;
     private ListView productsList;
     private DbAdapter dbAdapter;
+    private EditText myVariableEditText;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,7 +56,9 @@ public class StoreFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        Button myButton = (Button) this.binding.getRoot().findViewById(R.id.addProducts);
         productsList = (ListView) this.binding.getRoot().findViewById(R.id.store_productsListView);
+        myVariableEditText = (EditText) this.binding.getRoot().findViewById(R.id.txtAddProducts);
         registerForContextMenu(productsList);
 
         this.dbAdapter = ((MainActivity)getActivity()).getDbAdapter();
@@ -86,6 +92,29 @@ public class StoreFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 long _id = id;
             }
+        });
+
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(myButton.isPressed()){
+
+                    dbAdapter.addProducts(myVariableEditText.getText().toString());
+
+                    loadAllProducts();
+
+
+
+
+                    myVariableEditText.setText(""); // 3 - remise à vide de l'EditText
+
+                }
+
+
+            }
+
+
+
         });
     }
     @Override

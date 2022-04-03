@@ -12,6 +12,9 @@
     <string name="store_fragment_name">Magasin</string>
     <string name="dialog_title">Voulez-vous supprimer cet élément de la liste</string>
 
+
     <!--viewProductsList-->
     <string name="viewProductsList_Header">Contenu de votre liste :</string>
+    <string name="add_products_txt">Ajouter un produit</string>
+    <string name="add_products_btn">Ajouter</string>
 </resources>
