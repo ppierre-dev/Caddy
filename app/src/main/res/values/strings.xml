@@ -10,6 +10,7 @@
 
     <!--Store-->
     <string name="store_fragment_name">Magasin</string>
+    <string name="dialog_title">Voulez-vous supprimer cet élément de la liste</string>
 
     <!--viewProductsList-->
     <string name="viewProductsList_Header">Contenu de votre liste :</string>

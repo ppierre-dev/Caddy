@@ -119,7 +119,7 @@ public class DbAdapter {
     }
 
     public Cursor findProductsByListId(int listId) {
-        return mDb.rawQuery("select _id, label from products as p inner join productList as pl on pl.productId = p._id where pl.listId = ?;", new String[]{String.valueOf(listId)});
+        return mDb.rawQuery("select _id, label from products as p inner join productList as pl on pl.productId = p._id where pl.listId = ? order by label ;", new String[]{String.valueOf(listId)});
     }
 
     public Cursor fetchAllProducts() {
@@ -132,5 +132,14 @@ public class DbAdapter {
 
     public Cursor getListIdFromName(String listName) {
         return mDb.rawQuery("select _id from lists where name like ?", new String[]{String.valueOf(listName)});
+    }
+
+    public boolean deletePreDefinedProducts(long rowId) {
+
+        return mDb.delete("products", "_id" + "=" + rowId, null) > 0;
+    }
+
+    public void clearProductsList(int listId){
+        mDb.execSQL("delete from " + "productsList where listId = " + listId);
     }
 }

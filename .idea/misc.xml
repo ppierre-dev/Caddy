@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/Caddy/app/src/main/res/menu/store_context_menu.xml" value="0.25" />
+        <entry key="..\:/GitHub/Caddy/app/src/main/res/menu/view_products_list_menu.xml" value="0.7955882352941176" />
         <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/activity_main.xml" value="0.10400000000000001" />
         <entry key="..\:/iut_annee2/dev_mobile/Caddy/app/src/main/res/layout/content_main.xml" value="0.12847838957963292" />
